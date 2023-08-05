@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a75bc;
+            background-image: radial-gradient(circle, #0a75bc, #043961);
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #cityInput {
+            padding: 8px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            flex: 1;
+        }
+
+        #addButton {
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: #fff;
+            color: #0a75bc;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .weather-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .weather-card {
+            border-radius: 4px;
+            padding: 16px;
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .weather-card img {
+            max-width: 50px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .weather-card-content {
+            text-align: center;
+        }
+
+        .weather-card-content .city-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .weather-card-content .temperature {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .weather-card-content .weather-condition {
+            font-size: 18px;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+        }
+
+        .weather-card-content .weather-info {
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .search-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            #cityInput {
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+
+            #addButton {
+                border-radius: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Weather Dashboard</h1>
+        <div class="search-bar">
+            <input type="text" id="cityInput" placeholder="Enter city name...">
+            <button id="addButton">Add</button>
+        </div>
+        <div class="weather-cards" id="weatherCards"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
